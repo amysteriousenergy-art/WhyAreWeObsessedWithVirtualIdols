@@ -1,0 +1,298 @@
+/* ===== Data Section - 数据分析页 ===== */
+.section-data {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 页面头部 */
+.data-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.data-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(141, 240, 204, 0.1);
+    border: 1px solid rgba(141, 240, 204, 0.2);
+    border-radius: 100px;
+    font-size: 10px;
+    color: #8df0cc;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.data-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.data-subtitle {
+    font-size: 16px;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 数据盒子 ===== */
+.data-box {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #000000;
+    padding: 60px;
+    border-radius: 40px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 标题区域 - 修复：移除 absolute 定位 */
+.title-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.sub-title {
+    font-size: 26px;
+    color: #fff312;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+.main-title {
+    font-size: 72px;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+/* ===== 图表容器 ===== */
+.charts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+}
+
+/* 图表卡片 */
+.chart-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+}
+
+/* 图表头部 */
+.chart-header {
+    margin-bottom: 24px;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0;
+}
+
+/* 图表容器 */
+.chart-container {
+    margin-bottom: 20px;
+}
+
+/* 柱状图行 */
+.chart-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* 行标签 */
+.row-label {
+    width: 100px;
+    font-size: 14px;
+    color: var(--gray-300);
+    flex-shrink: 0;
+}
+
+/* 柱状条容器 */
+.bar-wrapper {
+    flex: 1;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 柱状条填充 */
+.bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 行数值 */
+.row-value {
+    width: 50px;
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* 图例 */
+.chart-legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--gray-300);
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+/* ===== 数据洞察卡片 ===== */
+.data-insights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.insight-card {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px);
+}
+
+.insight-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.insight-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 8px 0;
+}
+
+.insight-content p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.insight-content strong {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1024px) {
+    .data-box {
+        padding: 40px;
+    }
+
+    .charts-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .data-insights {
+        grid-template-columns: 1fr;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-data {
+        padding: 80px 24px;
+    }
+
+    .data-box {
+        padding: 32px 20px;
+        border-radius: 24px;
+        gap: 30px;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .sub-title {
+        font-size: 20px;
+    }
+
+    .chart-row {
+        gap: 10px;
+    }
+
+    .row-label {
+        width: 80px;
+        font-size: 12px;
+    }
+
+    .bar-wrapper {
+        height: 24px;
+    }
+
+    .row-value {
+        width: 40px;
+        font-size: 12px;
+    }
+
+    .insight-card {
+        padding: 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .insight-icon {
+        font-size: 28px;
+    }
+}

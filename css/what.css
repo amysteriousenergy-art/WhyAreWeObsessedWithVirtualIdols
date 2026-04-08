@@ -1,0 +1,516 @@
+/* ===== What Section - 迷恋什么 ===== */
+.section-what {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px;
+    min-height: 100vh;
+}
+
+/* 背景装饰 */
+.section-what::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(255, 147, 4, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(155, 198, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* 页面头部 */
+.what-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.what-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 147, 4, 0.1);
+    border: 1px solid rgba(255, 147, 4, 0.2);
+    border-radius: 100px;
+    font-size: 10px;
+    color: #ff9304;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.what-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.what-subtitle {
+    font-size: 16px;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 内容类型对比 ===== */
+.content-comparison {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* 总结卡片 */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.summary-card.luo:hover {
+    border-color: rgba(155, 198, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(155, 198, 255, 0.1);
+}
+
+.summary-card.aza:hover {
+    border-color: rgba(221, 237, 75, 0.3);
+    box-shadow: 0 20px 40px rgba(221, 237, 75, 0.1);
+}
+
+.summary-card.neuro:hover {
+    border-color: rgba(248, 226, 203, 0.3);
+    box-shadow: 0 20px 40px rgba(248, 226, 203, 0.1);
+}
+
+.card-icon-large {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.card-type-label {
+    font-size: 12px;
+    color: var(--gray-300);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.total-videos {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.total-label {
+    font-size: 12px;
+    color: var(--gray-300);
+}
+
+/* 详细数据网格 */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.detail-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.detail-card.luo::before {
+    background: linear-gradient(90deg, var(--color-luo-primary), var(--color-luo-secondary));
+}
+
+.detail-card.aza::before {
+    background: linear-gradient(90deg, var(--color-aza-primary), var(--color-aza-secondary));
+}
+
+.detail-card.neuro::before {
+    background: linear-gradient(90deg, var(--color-neuro-primary), var(--color-neuro-secondary));
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.detail-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--gray-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.detail-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 4px 0;
+}
+
+.detail-info span {
+    font-size: 12px;
+    color: var(--gray-300);
+}
+
+/* 数据条 */
+.data-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.data-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.bar-name {
+    color: var(--gray-300);
+}
+
+.bar-value {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.bar-track {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bar-fill.song {
+    background: linear-gradient(90deg, #ff9304, #ff6b35);
+}
+
+.bar-fill.live {
+    background: linear-gradient(90deg, #00dcff, #0099ff);
+}
+
+.bar-fill.other {
+    background: linear-gradient(90deg, #747e91, #2e3542);
+}
+
+/* 统计数字 */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stat-box {
+    text-align: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+}
+
+.stat-desc {
+    font-size: 11px;
+    color: var(--gray-300);
+    line-height: 1.4;
+}
+
+/* 特殊标签 */
+.tag-special {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: rgba(255, 147, 4, 0.15);
+    border-radius: 6px;
+    font-size: 11px;
+    color: #ff9304;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* ===== 总结文案区域 ===== */
+.conclusion-section {
+    margin-top: 100px;
+    padding: 60px 0;
+    position: relative;
+}
+
+.conclusion-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.conclusion-line {
+    flex: 1;
+    max-width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.conclusion-tag {
+    padding: 8px 20px;
+    background: rgba(255, 243, 18, 0.1);
+    border: 1px solid rgba(255, 243, 18, 0.3);
+    border-radius: 100px;
+    font-size: 11px;
+    color: var(--yellow);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.conclusion-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.conclusion-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+}
+
+/* 总结卡片 */
+.conclusion-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.conclusion-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.conclusion-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.conclusion-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.conclusion-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.conclusion-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.conclusion-desc strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.conclusion-need {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--yellow);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* 卡片悬停效果 */
+.conclusion-card.luo:hover {
+    border-color: rgba(155, 198, 255, 0.4);
+    box-shadow: 0 20px 40px rgba(155, 198, 255, 0.15);
+}
+
+.conclusion-card.aza:hover {
+    border-color: rgba(221, 237, 75, 0.4);
+    box-shadow: 0 20px 40px rgba(221, 237, 75, 0.15);
+}
+
+.conclusion-card.neuro:hover {
+    border-color: rgba(248, 226, 203, 0.4);
+    box-shadow: 0 20px 40px rgba(248, 226, 203, 0.15);
+}
+
+/* 最终总结 */
+.conclusion-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 32px 40px;
+    background: linear-gradient(135deg, rgba(255, 243, 18, 0.08) 0%, rgba(255, 0, 136, 0.05) 100%);
+    border: 1px solid rgba(255, 243, 18, 0.15);
+    border-radius: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.summary-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+}
+
+.conclusion-summary p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.conclusion-summary strong {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1024px) {
+    .summary-cards,
+    .detail-grid,
+    .conclusion-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .what-title {
+        font-size: 36px;
+    }
+
+    .conclusion-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-what {
+        padding: 80px 24px;
+    }
+
+    .detail-card {
+        padding: 24px;
+    }
+
+    .conclusion-section {
+        margin-top: 60px;
+        padding: 40px 0;
+    }
+
+    .conclusion-title {
+        font-size: 20px;
+    }
+
+    .conclusion-summary {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .conclusion-card {
+        padding: 24px;
+    }
+}

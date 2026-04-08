@@ -1,0 +1,327 @@
+/* ===== About Section - 关于页面 ===== */
+.section-about {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 背景装饰 */
+.section-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(255, 243, 18, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 0, 136, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* 页面头部 */
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 243, 18, 0.1);
+    border: 1px solid rgba(255, 243, 18, 0.2);
+    border-radius: 100px;
+    font-size: 10px;
+    color: var(--yellow);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.about-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+}
+
+.about-subtitle {
+    font-size: 16px;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 核心结论卡片 ===== */
+.conclusion-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.conclusion-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.conclusion-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conclusion-card:hover .card-glow {
+    opacity: 1;
+}
+
+.conclusion-card.luo .card-glow {
+    background: linear-gradient(90deg, #9BC6FF, #697EFD);
+    box-shadow: 0 0 20px rgba(155, 198, 255, 0.5);
+}
+
+.conclusion-card.aza .card-glow {
+    background: linear-gradient(90deg, #DDED4B, #9BC6FF);
+    box-shadow: 0 0 20px rgba(221, 237, 75, 0.5);
+}
+
+.conclusion-card.neuro .card-glow {
+    background: linear-gradient(90deg, #F8E2CB, #D63262);
+    box-shadow: 0 0 20px rgba(248, 226, 203, 0.5);
+}
+
+.conclusion-icon {
+    font-size: 56px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.conclusion-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.conclusion-card p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.conclusion-card p strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.conclusion-meta {
+    display: inline-flex;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--yellow);
+    font-weight: 500;
+}
+
+/* ===== 最终总结 ===== */
+.final-conclusion {
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.conclusion-box {
+    background: linear-gradient(135deg, rgba(255, 243, 18, 0.08) 0%, rgba(255, 0, 136, 0.05) 50%, rgba(12, 220, 247, 0.05) 100%);
+    border: 1px solid rgba(255, 243, 18, 0.15);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.conclusion-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+}
+
+.conclusion-box h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.conclusion-box p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.conclusion-box p strong {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+.conclusion-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== 项目信息 ===== */
+.project-info {
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.info-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-400), transparent);
+    margin: 0 auto 40px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-label {
+    font-size: 11px;
+    color: var(--gray-300);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.info-value {
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* ===== 页脚 ===== */
+.about-footer {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: var(--gray-300);
+    margin-bottom: 16px;
+}
+
+.footer-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+    font-size: 12px;
+    color: var(--gray-300);
+    margin-top: 8px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1024px) {
+    .conclusion-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .conclusion-box {
+        padding: 32px 24px;
+    }
+
+    .conclusion-box h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-about {
+        padding: 80px 24px;
+    }
+
+    .about-header {
+        margin-bottom: 60px;
+    }
+
+    .conclusion-card {
+        padding: 32px 24px;
+    }
+
+    .conclusion-icon {
+        font-size: 48px;
+    }
+
+    .conclusion-card h3 {
+        font-size: 20px;
+    }
+}

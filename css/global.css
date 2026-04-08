@@ -1,0 +1,290 @@
+/* ===== Motion 风格设计系统 ===== */
+
+:root {
+    /* 核心颜色 */
+    --black: #0f1115;
+    --white: #f5f5f5;
+    --yellow: #fff312;
+
+    /* 彩虹强调色 */
+    --hue-0: #fff312;
+    --hue-1: #ff0088;
+    --hue-2: #dd00ee;
+    --hue-3: #9911ff;
+    --hue-4: #0d63f8;
+    --hue-5: #0cdcf7;
+    --hue-6: #4ff0b7;
+
+    /* 透明度变体 */
+    --hue-0-transparent: rgba(255, 243, 18, 0.27);
+    --hue-1-transparent: rgba(255, 0, 136, 0.27);
+    --hue-5-transparent: rgba(12, 220, 247, 0.27);
+
+    /* 灰阶 */
+    --gray-100: #f5f5f5;
+    --gray-200: #e5e5e5;
+    --gray-300: #747e91;
+    --gray-400: #2e3542;
+    --gray-500: #1a1e26;
+    --gray-600: #12141a;
+    --gray-700: #0f1115;
+
+    /* 功能色 */
+    --accent: var(--yellow);
+    --accent-transparent: var(--hue-0-transparent);
+    --primary: var(--hue-5);
+    --secondary: var(--hue-1);
+
+    /* 虚拟偶像配色（用于数据页） */
+    --color-luo-primary: #9BC6FF;
+    --color-luo-secondary: #697EFD;
+    --color-aza-primary: #9BC6FF;
+    --color-aza-secondary: #697EFD;
+    --color-neuro-primary: #F8E2CB;
+    --color-neuro-secondary: #D63262;
+
+    /* 字体 */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+
+    /* 间距系统 */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
+
+    /* 圆角 */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 10px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* 动画 */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
+    --transition-slow: 0.3s ease;
+
+    /* 阴影 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.25);
+    --shadow-glow: 0 0 20px var(--hue-0-transparent);
+}
+
+/* ===== 重置样式 ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+::selection {
+    color: var(--white);
+    background: var(--hue-4);
+}
+
+/* ===== 新导航栏 - Motion风格 ===== */
+.global-nav {
+    position: fixed;
+    top: var(--space-5);
+    left: 50%;
+    transform: translateX(-50%);
+    height: 44px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    padding: var(--space-1);
+    z-index: 1000;
+    gap: var(--space-1);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--yellow);
+    padding: 0 var(--space-4);
+    letter-spacing: -0.02em;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 var(--space-1);
+}
+
+.nav-link {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    color: var(--gray-300);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+}
+
+.nav-link:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+    color: var(--black);
+    background: var(--yellow);
+    font-weight: 600;
+}
+
+.nav-cta {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: var(--space-1);
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+}
+
+.nav-cta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--hue-0-transparent);
+}
+
+/* 底部进度指示器 */
+.nav-progress {
+    position: fixed;
+    bottom: var(--space-5);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: rgba(15, 17, 21, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.progress-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: var(--gray-400);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.progress-dot:hover {
+    background: var(--gray-300);
+}
+
+.progress-dot.active {
+    background: var(--yellow);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--hue-0-transparent);
+}
+
+/* ===== 通用Section样式 ===== */
+.section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--space-8) var(--space-5);
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    :root {
+        --space-5: 16px;
+        --space-6: 24px;
+        --space-7: 32px;
+        --space-8: 48px;
+    }
+
+    .global-nav {
+        top: var(--space-4);
+        height: 40px;
+    }
+
+    .nav-brand {
+        padding: 0 var(--space-3);
+        font-size: 14px;
+    }
+
+    .nav-link {
+        padding: var(--space-1) var(--space-2);
+        font-size: 12px;
+    }
+
+    .nav-cta {
+        padding: var(--space-1) var(--space-2);
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .global-nav {
+        width: calc(100% - var(--space-6));
+    }
+
+    .nav-links {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: var(--space-1) 10px;
+    }
+}
+
+/* ===== 低性能模式 ===== */
+.low-performance .particle-bg,
+.low-performance .decoration-circle,
+.low-performance .glow {
+    display: none !important;
+}
+
+.low-performance * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+}
