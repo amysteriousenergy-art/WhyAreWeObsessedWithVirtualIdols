@@ -1,200 +1,293 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迷恋 · OBSESSION - 虚拟偶像数据新闻</title>
+/* ===== Category Section - 新卡片设计 ===== */
+.section-category {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: 120px 40px 200px;
+    min-height: 100vh;
+}
 
-    <!-- 图标 -->
-    <link rel="icon" href="arcticons_idolland-pripara.svg" type="image/svg+xml">
-    
-    <title>迷恋 · OBSESSION - 虚拟偶像数据新闻</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+/* 背景装饰 */
+.section-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(255, 243, 18, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(12, 220, 247, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
 
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+/* 头部 - Vault风格 */
+.category-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/landing.css">
-    <link rel="stylesheet" href="css/category.css">
-    <link rel="stylesheet" href="css/data.css">
-    <link rel="stylesheet" href="css/what.css">
-    <link rel="stylesheet" href="css/how.css">
-    <link rel="stylesheet" href="css/about.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="global-nav">
-        <div class="nav-brand">迷恋</div>
-        <div class="nav-links">
-            <a href="#landing" class="nav-link active">首页</a>
-            <a href="#category" class="nav-link">分类</a>
-            <a href="#data" class="nav-link">数据</a>
-            <a href="#about" class="nav-link">关于</a>
-        </div>
-    </nav>
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
 
-    <!-- Progress Indicator -->
-    <div class="nav-progress">
-        <div class="progress-dot active" data-section="landing"></div>
-        <div class="progress-dot" data-section="category"></div>
-        <div class="progress-dot" data-section="data"></div>
-        <div class="progress-dot" data-section="what"></div>
-        <div class="progress-dot" data-section="how"></div>
-        <div class="progress-dot" data-section="about"></div>
-    </div>
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
 
-    <!-- Landing Section -->
-    <section id="landing" class="section section-landing">
-        <canvas id="particle-canvas" class="particle-bg"></canvas>
+.section-desc-firsttext {
+    font-size: 16px;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+    text-align: center;
+}
 
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
+.section-desc {
+    font-size: 16px;
+    color: var(--gray-300);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
 
-        <div class="decoration-circle circle-1"></div>
-        <div class="decoration-circle circle-2"></div>
-        <div class="decoration-circle circle-3"></div>
+/* 卡片容器 - 水平布局 */
+.idols-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        <div class="landing-content">
-            <div class="landing-title-group">
-                <h1 class="landing-title-main">迷恋虚拟偶像成为年轻人新爱好</h1>
-                <div class="landing-title-sub">
-                    <span class="sub-text">数说我们为什么会</span>
-                    <span class="quote-mark">"</span>
-                    <span class="keyword">推</span>
-                    <span class="quote-mark">"</span>
-                    <span class="sub-text">虚拟偶像？</span>
-                </div>
-            </div>
+/* 偶像卡片 */
+.idol-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+}
 
-            <div class="landing-meta">
-                <span class="meta-item">洛天依</span>
-                <span class="meta-divider"></span>
-                <span class="meta-item">阿萨Aza</span>
-                <span class="meta-divider"></span>
-                <span class="meta-item">Neuro-sama</span>
-            </div>
-        </div>
+.idol-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
 
-        <div class="scroll-hint">
-            <div class="scroll-line"></div>
-            <span class="scroll-text">Scroll</span>
-        </div>
-    </section>
+/* 卡片图片区域 */
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+}
 
-    <!-- 主页后过渡文本 -->
-<section id="intro" class="section section-intro" style="opacity: 0; transform: translateY(60px); transition: all 1s ease;">
-    <div class="intro-content">
-        <p class="section-desc-firsttext">随着元宇宙与人工智能的发展，虚拟偶像已成为新兴消费形态与传媒业数智化转型的重要方向，其中国市场规模预计2025年突破1100亿元。虚拟偶像作为目前虚拟世界的核心交互中介和流量入口，其产业化爆发强大的新质内容生产力。国家“十四五”数字经济发展规划明确支持虚拟数字人发展，2024年各地配套落地资金超50亿元，为产业发展筑牢政策根基。</p>
-        <p class="section-desc-firsttext">而对于年轻一代，永不人设崩塌的虚拟偶像为他们提供一个安全理想化的情感寄托对象。他们通过观看直播、收听歌曲、买演唱会门票以及对虚拟偶像的二创等参与式文化实践构建双向、深度羁绊情境性强关系。这种稳定的情感依赖方式，正使推虚拟偶像演变为年轻人中颇具吸引力的新爱好与生活方式。</p>
-        <p class="section-desc-firsttext">聚焦这一现象，以中国年轻人粉上虚拟偶像普遍行为路径为主轴，挖掘国内B站虚拟偶像受众“谁在迷恋——迷恋什么——怎么迷恋——为何迷恋”。</p>
-    </div>
-</section>
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+}
 
-<script>
-// 简单的滚动显示
-window.addEventListener('scroll', () => {
-    const intro = document.querySelector('.section-intro');
-    const rect = intro.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.7) {
-        intro.style.opacity = '1';
-        intro.style.transform = 'translateY(0)';
+.idol-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* 渐变遮罩 */
+.card-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--black) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* 卡片内容 */
+.card-content {
+    padding: 24px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.card-luo .card-icon {
+    background: linear-gradient(135deg, #9BC6FF 0%, #697EFD 100%);
+}
+
+.card-aza .card-icon {
+    background: linear-gradient(135deg, #DDED4B 0%, #9BC6FF 100%);
+}
+
+.card-neuro .card-icon {
+    background: linear-gradient(135deg, #F8E2CB 0%, #D63262 100%);
+}
+
+.card-title-group {
+    flex: 1;
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+}
+
+.card-type {
+    font-size: 12px;
+    color: var(--gray-300);
+    margin: 0;
+}
+
+/* 介绍文字 */
+.card-bio {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 统计数据 */
+.card-stats {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-item {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    text-align: center;
+    min-width: auto;
+    width: auto;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.stat-label {
+    font-size: 10px;
+    color: var(--gray-300);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 卡片颜色主题 */
+.card-luo:hover {
+    border-color: rgba(155, 198, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(155, 198, 255, 0.1);
+}
+
+.card-aza:hover {
+    border-color: rgba(221, 237, 75, 0.3);
+    box-shadow: 0 20px 40px rgba(221, 237, 75, 0.1);
+}
+
+.card-neuro:hover {
+    border-color: rgba(248, 226, 203, 0.3);
+    box-shadow: 0 20px 40px rgba(248, 226, 203, 0.1);
+}
+
+/* 滚动动画初始状态 */
+.idol-card {
+    opacity: 0;
+    transform: translateY(80px);
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+    .idols-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
     }
-});
-</script>
+}
 
-    <!-- Category Section -->
-    <section id="category" class="section section-category">
-        <div class="category-header">
-            <div class="section-tag">Virtual Idols</div>
-            <h2 class="section-title">三类虚拟偶像</h2>
-            <p class="section-desc">虚拟偶像的崛起，是数字文化与前沿技术碰撞的必然结果。不同技术底座孕育出截然不同的偶像形态，也让每一类虚拟偶像都拥有专属的魅力内核。本文综合各类框架适用性，采用新华网《环球》杂志的三分法，并将“AI聊天机器人”修正为“AI驱动虚拟偶像”，最终将其划分为虚拟歌姬、虚拟主播、AI驱动虚拟偶像三类。并各自在Bilibili上选取代表，虚拟歌姬代表洛天依、虚拟主播代表阿萨Aza、AI驱动虚拟偶像代表Neuro-sama。</p>
-        </div>
-        <div class="idols-container"></div>
-    </section>
+@media (max-width: 768px) {
+    .section-category {
+        padding: 100px 24px 150px;
+    }
 
-    <!-- 分类后过渡文本 -->
-<section id="intro" style="padding: 80px; background: #0f1115;">
-    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
-        虚拟偶像文化并非泛人群流行，而是依托鲜明圈层形成的文化现象。为厘清这一热潮的参与主体，我们首先聚焦受众的性别结构和年龄结构，探讨三类虚拟偶像粉丝群体特征与参与动机的差异。
-    </p>
-</section>
+    .section-title {
+        font-size: 32px;
+    }
 
+    .idols-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
 
-    <!-- Data Section - 粉丝画像 -->
-    <section id="data" class="section section-data">
-        <div class="data-header">
-            <div class="data-tag">Fan Demographics</div>
-            <h2 class="data-title">谁在迷恋？</h2>
-            <p class="data-subtitle">从性别与年龄分布看三类虚拟偶像的粉丝画像差异</p>
-        </div>
-        <!-- data-box 将由 JS 动态生成 -->
-    </section>
+    .card-image-wrapper {
+        height: 320px;
+    }
+}
 
-    <!-- 谁后过渡文本 -->
-<section id="intro" style="padding: 80px; background: #0f1115;">
-    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
-        虚拟偶像的吸引力不仅源于人设与技术，更与其内容体系紧密相关。不同类型的虚拟偶像在内容呈现、互动形式与运营逻辑上存在明显差异，因此有必要对其账号内容结构展开分析，以此揭示究竟是怎样的内容体系持续吸引受众关注与投入。
-    </p>
-</section>
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 26px;
+    }
 
-    <!-- What Section -->
-    <section id="what" class="section section-what">
-        <div class="what-header">
-            <div class="what-tag">Content Analysis</div>
-            <h2 class="what-title">迷恋什么？</h2>
-            <p class="what-subtitle">从内容类型看三类虚拟偶像的差异：歌曲和直播比例</p>
-        </div>
-        <!-- 内容由 JS 动态生成 -->
-    </section>
+    .section-desc {
+        font-size: 14px;
+    }
 
-    <!-- 什么后过渡文本 -->
-<section id="intro" style="padding: 80px; background: #0f1115;">
-    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
-        受众对虚拟偶像的情感认同，最终会转化为具体的消费行为。为清晰呈现这份热爱如何落地为实际支持。在这里我们通过舰长数、周边销量、播放量、直播场均在线人数和热门视频关键词等分析三类虚拟偶像的差异。
-    </p>
-</section>
-
-    <!-- How Section -->
-    <section id="how" class="section section-how">
-        <div class="how-header">
-            <div class="how-tag">Consumption Analysis</div>
-            <h2 class="how-title">怎么迷恋？</h2>
-            <p class="how-subtitle">从粉丝消费行为看三类虚拟偶像的商业模式差异</p>
-        </div>
-        <!-- 内容由 JS 动态生成 -->
-    </section>
-
-    <!-- 怎么后过渡文本 -->
-<section id="intro" style="padding: 80px; background: #0f1115;">
-    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
-        综合前文对虚拟偶像分类、受众特征、内容结构与消费行为的分析可以发现，不同类型虚拟偶像在传播与运营中存在显著差异。为系统解释这些差异形成的根源，下文从技术逻辑、内容定位、情感联结方式等维度进行差异归因，梳理各类虚拟偶像发展路径分化的核心原因。
-    </p>
-</section>
-
-    <!-- About Section -->
-    <section id="about" class="section section-about">
-        <!-- 内容由 JS 动态生成 -->
-    </section>
-
-
-
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-
-    <!-- JavaScript Files -->
-    <script src="js/main.js"></script>
-    <script src="js/landing.js"></script>
-    <script src="js/category.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/what.js"></script>
-    <script src="js/how.js"></script>
-    <script src="js/about.js"></script>
-</body>
-</html>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💫%3C/text%3E%3C/svg%3E">
+    .card-image-wrapper {
+        height: 280px;
+    }
+}
