@@ -85,15 +85,44 @@
         </div>
     </section>
 
+    <!-- 主页后过渡文本 -->
+<section id="intro" class="section section-intro" style="opacity: 0; transform: translateY(60px); transition: all 1s ease;">
+    <div class="intro-content">
+        <p class="section-desc-firsttext">随着元宇宙与人工智能的发展，虚拟偶像已成为新兴消费形态与传媒业数智化转型的重要方向，其中国市场规模预计2025年突破1100亿元。虚拟偶像作为目前虚拟世界的核心交互中介和流量入口，其产业化爆发强大的新质内容生产力。国家“十四五”数字经济发展规划明确支持虚拟数字人发展，2024年各地配套落地资金超50亿元，为产业发展筑牢政策根基。</p>
+        <p class="section-desc-firsttext">而对于年轻一代，永不人设崩塌的虚拟偶像为他们提供一个安全理想化的情感寄托对象。他们通过观看直播、收听歌曲、买演唱会门票以及对虚拟偶像的二创等参与式文化实践构建双向、深度羁绊情境性强关系。这种稳定的情感依赖方式，正使推虚拟偶像演变为年轻人中颇具吸引力的新爱好与生活方式。</p>
+        <p class="section-desc-firsttext">聚焦这一现象，以中国年轻人粉上虚拟偶像普遍行为路径为主轴，挖掘国内B站虚拟偶像受众“谁在迷恋——迷恋什么——怎么迷恋——为何迷恋”。</p>
+    </div>
+</section>
+
+<script>
+// 简单的滚动显示
+window.addEventListener('scroll', () => {
+    const intro = document.querySelector('.section-intro');
+    const rect = intro.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.7) {
+        intro.style.opacity = '1';
+        intro.style.transform = 'translateY(0)';
+    }
+});
+</script>
+
     <!-- Category Section -->
     <section id="category" class="section section-category">
         <div class="category-header">
             <div class="section-tag">Virtual Idols</div>
             <h2 class="section-title">三类虚拟偶像</h2>
-            <p class="section-desc">从虚拟歌姬到AI驱动，技术形态决定内容形态，内容形态分化迷恋逻辑</p>
+            <p class="section-desc">虚拟偶像的崛起，是数字文化与前沿技术碰撞的必然结果。不同技术底座孕育出截然不同的偶像形态，也让每一类虚拟偶像都拥有专属的魅力内核。本文综合各类框架适用性，采用新华网《环球》杂志的三分法，并将“AI聊天机器人”修正为“AI驱动虚拟偶像”，最终将其划分为虚拟歌姬、虚拟主播、AI驱动虚拟偶像三类。并各自在Bilibili上选取代表，虚拟歌姬代表洛天依、虚拟主播代表阿萨Aza、AI驱动虚拟偶像代表Neuro-sama。</p>
         </div>
         <div class="idols-container"></div>
     </section>
+
+    <!-- 分类后过渡文本 -->
+<section id="intro" style="padding: 80px; background: #0f1115;">
+    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
+        虚拟偶像文化并非泛人群流行，而是依托鲜明圈层形成的文化现象。为厘清这一热潮的参与主体，我们首先聚焦受众的性别结构和年龄结构，探讨三类虚拟偶像粉丝群体特征与参与动机的差异。
+    </p>
+</section>
+
 
     <!-- Data Section - 粉丝画像 -->
     <section id="data" class="section section-data">
@@ -105,15 +134,29 @@
         <!-- data-box 将由 JS 动态生成 -->
     </section>
 
+    <!-- 谁后过渡文本 -->
+<section id="intro" style="padding: 80px; background: #0f1115;">
+    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
+        虚拟偶像的吸引力不仅源于人设与技术，更与其内容体系紧密相关。不同类型的虚拟偶像在内容呈现、互动形式与运营逻辑上存在明显差异，因此有必要对其账号内容结构展开分析，以此揭示究竟是怎样的内容体系持续吸引受众关注与投入。
+    </p>
+</section>
+
     <!-- What Section -->
     <section id="what" class="section section-what">
         <div class="what-header">
             <div class="what-tag">Content Analysis</div>
             <h2 class="what-title">迷恋什么？</h2>
-            <p class="what-subtitle">从内容类型看三类虚拟偶像的差异：歌曲和直播</p>
+            <p class="what-subtitle">从内容类型看三类虚拟偶像的差异：歌曲和直播比例</p>
         </div>
         <!-- 内容由 JS 动态生成 -->
     </section>
+
+    <!-- 什么后过渡文本 -->
+<section id="intro" style="padding: 80px; background: #0f1115;">
+    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
+        受众对虚拟偶像的情感认同，最终会转化为具体的消费行为。为清晰呈现这份热爱如何落地为实际支持。在这里我们通过舰长数、周边销量、播放量、直播场均在线人数和热门视频关键词等分析三类虚拟偶像的差异。
+    </p>
+</section>
 
     <!-- How Section -->
     <section id="how" class="section section-how">
@@ -125,10 +168,19 @@
         <!-- 内容由 JS 动态生成 -->
     </section>
 
+    <!-- 怎么后过渡文本 -->
+<section id="intro" style="padding: 80px; background: #0f1115;">
+    <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto;">
+        综合前文对虚拟偶像分类、受众特征、内容结构与消费行为的分析可以发现，不同类型虚拟偶像在传播与运营中存在显著差异。为系统解释这些差异形成的根源，下文从技术逻辑、内容定位、情感联结方式等维度进行差异归因，梳理各类虚拟偶像发展路径分化的核心原因。
+    </p>
+</section>
+
     <!-- About Section -->
     <section id="about" class="section section-about">
         <!-- 内容由 JS 动态生成 -->
     </section>
+
+
 
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
