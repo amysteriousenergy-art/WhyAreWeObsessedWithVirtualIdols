@@ -79,7 +79,84 @@ class AboutSection {
                     <p>这不仅是技术的迭代，更是<strong>青年文化消费方式</strong>的深刻变革——从被动接收到主动参与，从单向消费到双向共建，从人类中心到人机共生。</p>
                 </div>
             </div>
+            <!--总结文本 -->
+            <section class="summary-text" style="padding: 80px;">
+                <p style="font-size: 16px; color: #747e91; text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.9;">
+                    虚拟偶像的风靡，从来不止是形象的新奇，更是数字时代情感需求的投射。它满足了年轻人对审美、陪伴、探索的多元需求，用技术搭建起现实与虚拟的情感桥梁。虚拟歌姬承载文化与音乐理想，虚拟主播给予温暖实时陪伴，AI 虚拟主播展现技术与人性的交织，三者共同勾勒出数字时代偶像的全新模样。
+                    在平台经济与数字文化盛行的当下，虚拟偶像成为新型情感载体，打破时空与身份的限制，为年轻人提供稳定、自由、个性化的精神陪伴。这场关于虚拟偶像的迷恋，不仅是一场文化潮流，更是数字时代情感表达与价值追求的深刻变革，预示着人机共生、双向共建的新型文化生态正在到来。
+                </p>
+            </section>
+           
 
+            <!-- 扩展内容区域（隐藏） -->
+             <!-- <div class="extended-content">
+                <div class="extended-header">
+                    <div class="extended-line"></div>
+                    <span class="extended-tag">扩展标题</span>
+                    <div class="extended-line"></div>
+                </div>-->
+                
+                <!-- <div class="extended-grid">
+                    <!-- 卡片 1 -->
+                    <!-- <div class="extended-card">
+                        <div class="card-number">01</div>
+                        <h4>作者</h4>
+                        <p>陈植贤</p>
+                    </div> -->
+                    
+                    <!-- 卡片 2 -->
+                    <!-- <div class="extended-card">
+                        <div class="card-number">02</div>
+                        <h4>标题二</h4>
+                        <p>这里填写具体内容文本...</p>
+                    </div> -->
+                    
+                    <!-- 卡片 3 -->
+                    <!-- <div class="extended-card highlight">
+                        <div class="card-number">03</div>
+                        <h4>标题三（高亮）</h4>
+                        <p>这里填写具体内容文本...</p>
+                    </div> -->
+                </div>
+                
+                <!-- 引用块 -->
+                <div class="extended-quote references-section">
+                    <div class="quote-icon">“</div>
+                    <h3 class="references-title">参考文献</h3>
+                    <div class="references-list">
+                        <cite>[1] 国家发展改革委，中央网信办。国家 "十四五" 数字经济发展规划 [R]. 北京：国家发展和改革委员会，2021.</cite>
+                        <cite>[2] 新华网《环球》杂志。中国虚拟偶像产业发展报告 [R]. 北京：新华网，2024.</cite>
+                        <cite>[3] Bilibili. Bilibili 虚拟主播行业生态年度报告 [R/OL]. (2024) [2026-04-09]. https://www.bilibili.com .</cite>
+                        <cite>[4] 中国信息通信研究院。中国虚拟数字人产业发展白皮书 [R]. 北京：中国信息通信研究院，2024.</cite>
+                        <cite>[5] 艾瑞咨询。中国虚拟偶像行业研究报告 [R]. 北京：艾瑞咨询集团，2023.</cite>
+                        <cite>[6] 前瞻产业研究院. 2024-2029 年中国虚拟偶像行业市场前瞻与投资战略规划分析报告 [R]. 深圳：前瞻产业研究院，2024.</cite>
+                        <cite>[7] 国金证券传媒行业研究中心。虚拟偶像行业专题：从内容到商业化的全链路分析 [R]. 上海：国金证券股份有限公司，2023.</cite>
+                        <cite>[8] 中国演出行业协会. 2023 年中国虚拟演出市场发展报告 [R]. 北京：中国演出行业协会，2024.</cite>
+                        <cite>[9] 易观分析。中国虚拟偶像市场发展年度综合分析 [R]. 北京：易观分析，2023.</cite>
+                        <cite>[10] QuestMobile. 中国移动互联网虚拟偶像用户洞察报告 [R]. 北京：北京贵士信息科技有限公司，2024.</cite>
+                    </div>
+                </div>
+                
+                <!-- 时间轴（隐藏） -->
+                <!--<div class="extended-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h5>时间节点一</h5>
+                            <p>描述内容...</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h5>时间节点二</h5>
+                            <p>描述内容...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
             <!-- 项目信息 -->
             <div class="project-info">
                 <div class="info-divider"></div>
@@ -89,17 +166,16 @@ class AboutSection {
                         <span class="info-value">洛天依 · 阿萨Aza · Neuro-sama</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">数据来源</span>
-                        <span class="info-value">Bilibili平台公开数据</span>
+                        <span class="info-label">作者</span>
+                        <span class="info-value">陈植贤</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">研究维度</span>
-                        <span class="info-value">粉丝画像 · 内容类型 · 消费行为 ·迷恋归因</span>
+                        <span class="info-label">指导老师</span>
+                        <span class="info-value">梁爽</span>
                     </div>
                 </div>
             </div>
-
-            <!-- 页脚 -->
+                        <!-- 页脚 -->
             <div class="about-footer">
                 <p class="footer-text">虚拟偶像数据新闻项目</p>
                 <div class="footer-brand">迷恋 · OBSESSION</div>
@@ -123,6 +199,58 @@ class AboutSection {
                 }
             }
         );
+
+                // 扩展内容动画
+        const extendedCards = document.querySelectorAll('.extended-card');
+        extendedCards.forEach((card, index) => {
+            gsap.fromTo(card,
+                { opacity: 0, y: 60, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: '.extended-grid',
+                        start: "top 75%"
+                    }
+                }
+            );
+        });
+
+        gsap.fromTo('.extended-quote',
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.extended-quote',
+                    start: "top 80%"
+                }
+            }
+        );
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            gsap.fromTo(item,
+                { opacity: 0, x: -30 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.6,
+                    delay: index * 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: '.extended-timeline',
+                        start: "top 80%"
+                    }
+                }
+            );
+        });
 
         // 结论卡片动画
         const conclusionCards = document.querySelectorAll('.conclusion-card');
@@ -185,6 +313,20 @@ class AboutSection {
                 scrollTrigger: {
                     trigger: '.about-footer',
                     start: "top 90%"
+                }
+            }
+        );
+        // 总结文本动画
+        gsap.fromTo('.summary-text',
+            { opacity: 0, y: 60 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.summary-text',
+                    start: "top 80%"
                 }
             }
         );
